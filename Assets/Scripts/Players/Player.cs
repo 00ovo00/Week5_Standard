@@ -8,17 +8,17 @@ public interface IAttackStrategy
 }
 public class Player : MonoBehaviour
 {
-    public IAttackStrategy currentAttack;
+    public IAttackStrategy CurrentAttack;   // 현재 사용 중인 공격 패턴
     [SerializeField] private Transform attackSpawnPoint;
 
     public void SetAttackStrategy(IAttackStrategy strategy)
     {
-        currentAttack = strategy;
+        CurrentAttack = strategy;
     }
 
     public void Attack()
     {
-        currentAttack?.ExecuteAttack(attackSpawnPoint);
+        CurrentAttack?.ExecuteAttack(attackSpawnPoint);
     }
 }
 
